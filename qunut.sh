@@ -1,4 +1,6 @@
-#!/system/bin/sh
+#!/usr/bin/bash
+
+#/system/bin/sh
 
 #Author:  Luis Adha
 # This code is released to the public domain.
