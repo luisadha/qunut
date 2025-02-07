@@ -12,8 +12,9 @@
 # Author:  Luis Adha
   
 # Info : 39 Lines, 3 Pages.
-export BASH_ARGV0=""
-more $0
+export BASH_ARGV0="" # to hide error with curl pipe confilct with bash
+# more $0
+sed -n '/: BEGIN/,/: EOF/p' $0 | more
 
 : BEGIN
 # To memorize Surah Doa /UNTUK MENGHAFAL DOA QUNUT (type: q for Quit/keluar)
