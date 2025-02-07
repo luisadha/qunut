@@ -2,8 +2,29 @@
 #!/usr/bin/env bash
 #</h2><span>luisadha.github.io/qunut Use this self-hosted script to Reading e-book qunut.</span><h3>
 ### <a name="usage" href="#usage">Membaca melalui Terminal</a></h2><pre><code code="shell">curl -L luisadha.github.io/qunut | bash</code></pre><h3><p class="hidden-text">
+if command -v less &> /dev/null; then
+    echo "less is installed and likely used as the default pager."
+elif command -v more &> /dev/null; then
+    echo "more is installed and likely used as the default pager."
+else
+    echo "No common pager (less/more) found."
+fi
+
+if [[ -n "$PAGER" ]]; then
+    echo "PAGER is set to: $PAGER"
+    pager_isset=true
+else
+    pager_isset=false
+fi
+
+if [[ -n "$MANPAGER" ]]; then
+    echo "MANPAGER is set to: $MANPAGER"
+else
+    echo "MANPAGER is not set."
+fi
+[[ "$pager_isset" == "false" ]] && echo "PAGER is not set."; return 
 export BASH_ARGV0=""
-sed -n '/: BEGIN/,/: EOF/p' $0 | less
+sed -n '/: BEGIN/,/: EOF/p' $0 | $PAGER
 # </p>
 ### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">
 # HOW TO READ? CARA BACA
