@@ -11,14 +11,12 @@ elif command -v more &> /dev/null; then
 else
     echo -e $red "No common pager (less/more) found." $reset
 fi
-
-if [[ -n "$PAGER" ]]; then
-    
+if [[ -n "$PAGER" ]]; then   
     pager_isset=true
 else
     pager_isset=false
 fi
-
+m
 if [[ -n "$MANPAGER" ]]; then
     echo -e $blue "[info]: ${green}MANPAGER is set to: $MANPAGER" $reset
 else
