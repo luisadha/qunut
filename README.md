@@ -1,15 +1,14 @@
-# qunut
+# qunut doa
 
-To memorize surah qunut
+# Reading via terminal
+```sh
+curl -L luisadha.github.io/qunut | bash
+```
 
-# Usage
 
-``
-sh qunutv1.1.sh
-``
-Or
+# Licensi
+CC BY-SA
 
-``
-less qunutv1.1.sh
-``
+# Author
 
+Luis Adha
