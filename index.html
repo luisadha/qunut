@@ -2,11 +2,11 @@
 #!/usr/bin/env bash
 #</h2><span>luisadha.github.io/qunut Use this self-hosted script to Reading e-book qunut.</span><h3>
 ### <a name="usage" href="#usage">Membaca melalui Terminal</a></h2><pre><code code="shell">curl -L luisadha.github.io/qunut | bash</code></pre><h3><p class="hidden-text">
-red="\e[0;91m"; green="\e[0;32m"; reset="\e[0m"
+red="\e[0;91m"; green="\e[0;32m"; yellow="\e[0;33m"; reset="\e[0m"
 if command -v less &> /dev/null; then
-    echo "less is installed and likely used as the default pager."
+    echo -e $yellow "[info]: less is installed and likely used as the default pager." $reset
 elif command -v more &> /dev/null; then
-    echo "more is installed and likely used as the default pager."
+    echo -e $yellow "[info]: more is installed and likely used as the default pager." $reset
 else
     echo -e $red "No common pager (less/more) found." $reset
 fi
@@ -21,7 +21,7 @@ fi
 if [[ -n "$MANPAGER" ]]; then
     echo -e $green "MANPAGER is set to: $MANPAGER" $reset
 else
-    echo -e $green "MANPAGER is not set." $reset
+    echo -e $red "MANPAGER is not set." $reset
 fi
 [[ "$pager_isset" == "false" ]] && echo -e $red "PAGER is not set." $reset || echo -e $green "PAGER is set to: $PAGER" $reset
 
