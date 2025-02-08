@@ -24,7 +24,7 @@ fi
 [[ "$pager_isset" == "false" ]] && echo -e $purple "[warn]: ${red}PAGER is not set." $reset || echo -e $blue "[info]: ${green}PAGER is set to: $PAGER" $reset
 
 export BASH_ARGV0=""
-sed -n '/: BEGIN/,/: EOF/p' $0 | $PAGER
+sed -n '/: BEGIN/,/: EOF/p' $0 | ${PAGER:-$MANPAGER}
 # </span>
 ### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">
 # HOW TO READ? CARA BACA
