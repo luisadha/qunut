@@ -17,8 +17,10 @@ else
 fi
 
 if [[ -n "$MANPAGER" ]]; then
+    manpager_isset=true
     echo -e $blue "[info]: ${green}MANPAGER is set to: $MANPAGER" $reset
 else
+    manpager_isset=false
     echo -e $purple "[warn]: ${red}MANPAGER is not set." $reset
 fi
 [[ "$pager_isset" == "false" ]] && echo -e $purple "[warn]: ${red}PAGER is not set." $reset || echo -e $blue "[info]: ${green}PAGER is set to: $PAGER" $reset
