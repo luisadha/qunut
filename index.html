@@ -77,5 +77,6 @@ cat <<'EOF'
 : EOF 
 EOF
 }
-self | sed -n '/: BEGIN/,/: EOF/p' | ${PAGER:-$MANPAGER}
+str="$(self)"
+echo "${str}" | sed -n '/: BEGIN/,/: EOF/p' | ${PAGER:-$MANPAGER}
 #</code></pre><footer>#### Copyright (C) 2021-2025 <a href="https://luisadha.my.id">luisadha.my.id</a> (<a href="https://github.com/luisadha">github.com/luisadha</a>) ####</footer></body></html>
