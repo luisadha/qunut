@@ -25,22 +25,12 @@ else
 fi
 [[ "$pager_isset" == "false" ]] && echo -e $purple "[warn]: ${red}PAGER is not set." $reset || echo -e $blue "[info]: ${green}PAGER is set to: $PAGER" $reset
 
-__this="${BASH_SOURCE[0]:-$0}"
-__is_source=false
-if [[ "$__this" != "$0" ]]; then __is_source=true; fi
-
-# Deteksi apakah ingin auto-source diri (untuk | bash)
-if ! $__is_source && [[ -t 0 ]]; then
-  echo "Jangan dijalankan langsung. Gunakan:"
-  echo "  . <(curl -sL https://luisadha.github.io/qunut)"
-  exit 1
-fi
 
 export BASH_ARGV0=""
 
 # </span>
 ### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">
-cat <<'EOF' | sed -n '/: BEGIN/,/: EOF/p' | ${PAGER:-$MANPAGER}
+cat <<'EOF' | ${PAGER:-$MANPAGER}
 # HOW TO READ? CARA BACA
 # - Read via Terminal 
 # curl -L luisadha.github.io/qunut | bash
