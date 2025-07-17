@@ -37,9 +37,10 @@ if ! $__is_source && [[ -t 0 ]]; then
 fi
 
 export BASH_ARGV0=""
-sed -n '/: BEGIN/,/: EOF/p' $__this | ${PAGER:-$MANPAGER}
+
 # </span>
 ### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">
+cat <<'EOF' | sed -n '/: BEGIN/,/: EOF/p' | ${PAGER:-$MANPAGER}
 # HOW TO READ? CARA BACA
 # - Read via Terminal 
 # curl -L luisadha.github.io/qunut | bash
@@ -83,4 +84,5 @@ sed -n '/: BEGIN/,/: EOF/p' $__this | ${PAGER:-$MANPAGER}
 # Wa shallallaahu 'alaa sayyidinaa Muhammadin-nabiyyil-ummiyyi wa 'alaa aalihii wa shahbihii wa sallam.
 
 : EOF 
+EOF
 #</code></pre><footer>#### Copyright (C) 2021-2025 <a href="https://luisadha.my.id">luisadha.my.id</a> (<a href="https://github.com/luisadha">github.com/luisadha</a>) ####</footer></body></html>
