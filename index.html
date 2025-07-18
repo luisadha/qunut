@@ -31,7 +31,5 @@ export BASH_ARGV0=""
 
 # </span>
 ### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">
-cat <<'EOF' | sed -n '/: BEGIN/,/: EOF/p' | ${PAGER:-$MANPAGER}
-curl -sSL https://gist.githubusercontent.com/luisadha/eb630443fa87ae7d405b5961bc6955ff/raw/84e5c23dee25f05d7ef2bce26ba663c25e51b761/qunut.more
-EOF
+curl -sSL https://gist.githubusercontent.com/luisadha/eb630443fa87ae7d405b5961bc6955ff/raw/84e5c23dee25f05d7ef2bce26ba663c25e51b761/qunut.more | sed -n '/: BEGIN/,/: EOF/p' | ${PAGER:-$MANPAGER}
 #</code></pre><footer>#### Copyright (C) 2021-2025 <a href="https://luisadha.my.id">luisadha.my.id</a> (<a href="https://github.com/luisadha">github.com/luisadha</a>) ####</footer></body></html>
