@@ -6,7 +6,7 @@ curl -L luisadha.github.io/qunut | bash
 ```
 
 
-# Licensi
+# License
 CC BY-SA
 
 # Author
