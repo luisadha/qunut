@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Shows list user-intsalled apps in Termux:widget / Shortcut. Makeable launch in tapping like drawer behavior.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "icons/drawercli-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Drawercli on Progressive Web",
+  "short_name": "Drawercli Aurora",
+  "start_url": "/drawercli-aurora/index.html"
+}
