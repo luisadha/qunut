@@ -2,7 +2,7 @@
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/drawercli-aurora/sw.js')
+    .register('/qunut/sw.js')
     .then(() => { console.log('Service Worker Registered'); });
 }
 
