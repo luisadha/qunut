@@ -1,5 +1,5 @@
 {
-  "background_color": "purple",
+  "background_color": "#750c75",
   "description": "Memorize Qunut",
   "display": "fullscreen",
   "icons": [
@@ -10,6 +10,14 @@
     }
   ],
   "name": "Qunut Memorize",
-  "short_name": "Hafal Qunut ",
-  "start_url": "/qunut/index.html"
+  "short_name": "qunut",
+  "start_url": "https://luisadha.github.io/qunut/",
+  "theme_color": "#000000",
+  "dir": "auto",
+  "lang": "id",
+  "orientation": "any",
+  "categories": [
+    "books",
+    "utilities"
+  ]
 }
