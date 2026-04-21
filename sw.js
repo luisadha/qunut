@@ -3,6 +3,7 @@ const FILES_TO_CACHE = [
   "/qunut/",
   "/qunut/index.html",
   "/qunut/index.js",
+  "/qunut/assets/favicon.png",
 ];
 
 // install
