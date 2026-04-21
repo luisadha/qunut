@@ -1,10 +1,8 @@
-const CACHE_NAME = "drawercli-v3";
+const CACHE_NAME = "qunut-v3";
 const FILES_TO_CACHE = [
-  "/drawercli-aurora/",
-  "/drawercli-aurora/index.html",
-  "/drawercli-aurora/index.js",
-  "/drawercli-aurora/assets/js/btn-share.js",
-  "/drawercli-aurora/assets/css/style.css",
+  "/qunut/",
+  "/qunut/index.html",
+  "/qunut/index.js",
 ];
 
 // install
