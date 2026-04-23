@@ -1,37 +1,57 @@
-// Register service worker to control making site work offline
+/* ===========================================================
+ * sw-registration.js
+ * ===========================================================
+ * Copyright 2016 @huxpro
+ * Licensed under Apache 2.0
+ * Register service worker.
+ * ========================================================== */
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/qunut/sw.js')
-    .then(() => { console.log('Service Worker Registered'); });
+// SW Version Upgrade Ref: <https://youtu.be/Gb9uI67tqV0>
+
+function handleRegistration(registration){
+  console.log('Service Worker Registered. ', registration)
+  /**
+   * ServiceWorkerRegistration.onupdatefound
+   * The service worker registration's installing worker changes.
+   */
+  registration.onupdatefound = (e) => {
+    const installingWorker = registration.installing;
+    installingWorker.onstatechange = (e) => {
+      if (installingWorker.state !== 'installed') return;
+      if (navigator.serviceWorker.controller) {
+        console.log('SW is updated');
+      } else {
+        console.log('A Visit without previous SW');
+        createSnackbar({
+          message: 'App ready for offline use.',
+          duration: 3000
+        })
+      }
+    };
+  }
 }
 
-// Code to handle install prompt on desktop
+if(navigator.serviceWorker){
+  // For security reasons, a service worker can only control the pages
+  // that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then((registration) => handleRegistration(registration))
+    .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
 
-let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-  // Update UI to notify the user they can add to home screen
-  addBtn.style.display = 'block';
-
-  addBtn.addEventListener('click', () => {
-    // hide our user interface that shows our A2HS button
-    addBtn.style.display = 'none';
-    // Show the prompt
-    deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the app prompt');
-      } else {
-        console.log('User dismissed the app prompt');
-      }
-      deferredPrompt = null;
-    });
-  });
-});
+  // register message receiver
+  // https://dbwriteups.wordpress.com/2015/11/16/service-workers-part-3-communication-between-sw-and-pages/
+  navigator.serviceWorker.onmessage = (e) => {
+    console.log('SW: SW Broadcasting:', event);
+    const data = e.data
+    
+    if(data.command == "UPDATE_FOUND"){
+      console.log("UPDATE_FOUND_BY_SW", data);
+      createSnackbar({
+        message: "Content updated.",
+        actionText:"refresh",
+        action: function(e){location.reload()}
+      })
+    }
+  }
+}
