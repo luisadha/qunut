@@ -1,23 +1,25 @@
 {
-  "background_color": "#750c75",
+  "name": "Qunut Memorize",
+  "short_name": "Qunut",
   "description": "Memorize Qunut",
-  "display": "fullscreen",
+  "start_url": "/qunut/",
+  "display": "standalone",
+  "background_color": "#750c75",
+  "theme_color": "#750c75",
   "icons": [
     {
-      "src": "assets/favicon.png",
+      "src": "/qunut/assets/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/qunut/assets/favicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "name": "Qunut Memorize",
-  "short_name": "qunut",
-  "start_url": "https://luisadha.github.io/qunut/",
-  "theme_color": "#000000",
-  "dir": "auto",
   "lang": "id",
-  "orientation": "any",
-  "categories": [
-    "books",
-    "utilities"
-  ]
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "categories": ["education", "utilities"]
 }
