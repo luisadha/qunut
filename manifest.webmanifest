@@ -2,7 +2,6 @@
   "name": "Qunut Memorize",
   "short_name": "Qunut",
   "description": "Memorize Qunut",
-  "start_url": "/qunut/",
   "display": "standalone",
   "background_color": "#750c75",
   "theme_color": "#750c75",
@@ -30,7 +29,7 @@
     "purpose": "maskable"
   }
 ],
-  "start_url": "/qunut/index.html
+  "start_url": "/qunut/index.html",
   "lang": "id",
   "dir": "ltr",
   "orientation": "portrait-primary",
