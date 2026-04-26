@@ -29,7 +29,8 @@
     "type": "image/png",
     "purpose": "maskable"
   }
-], 
+],
+  "start_url": "/qunut/index.html
   "lang": "id",
   "dir": "ltr",
   "orientation": "portrait-primary",
