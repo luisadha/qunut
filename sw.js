@@ -6,6 +6,7 @@ const PRECACHE_ASSETS = [
   './index.html',
   './index.js',
   './iconx/android-chrome-192x192.png',
+  './iconx/android-chrome-512x512.png',
   './assets/favicon.png',
   './offline.html'
 ];
