@@ -1,0 +1,552 @@
+/*! pwabunga.css 1.0 | 2023 MIT Licence | github.com/Effeilo/pwabunga.css */
+
+/* ----------------------------------------------------------------------------
+
+ ### PWA Bunga! CSS
+
+     This file is a basic CSS file with best practices, normalization of 
+     HTML elements, ergonomic improvements and reset to improve consistency 
+     and compatibility between browsers, as well as to facilitate the work 
+     of the developer.
+
+     Documentation of pwabunga.css
+     --------------------------------
+     https://pwabunga.com/documentation/css.html
+
+---------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+ ## Scroll Behavior
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. If the user has not requested the system to minimize the amount 
+      of animation or movement.
+      @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ * 2. Defines a smooth scroll effect to the scrolling behavior for a scrolling box, 
+      when scrolling happens due to navigation or CSSOM scrolling APIs.
+      @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
+ */
+
+@media (prefers-reduced-motion: no-preference) { /* 1 */
+  :root {
+    scroll-behavior: smooth; /* 2 */
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ ## Universal inheritance
+---------------------------------------------------------------------------- */
+
+/**
+ * Makes irritable the `box sizing` property for all elements.
+   @for All modern browsers. 
+   @see www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+
+*,
+::before,
+::after {
+  box-sizing: inherit; 
+}
+
+/* ----------------------------------------------------------------------------
+ ## Selection
+---------------------------------------------------------------------------- */
+
+/**
+ * Remove text-shadow in selection highlight.
+ * 1. @for Firefox 2+, Firefox for Android 33+.
+ * 2. @for Chrome 4+, Safari 3.1+, and Android 4.4+.
+   @see https://twitter.com/miketaylr/status/12228805301
+ */
+
+::-moz-selection {
+  text-shadow: none; /* 1 */
+}
+
+::selection {
+  text-shadow: none; /* 2 */
+}
+
+/* ----------------------------------------------------------------------------
+ ## The root element
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Changing the dimensioning of the box model for the `html` element.
+ * 2. Improve consistency of default fonts in all browsers. 
+      @see https://github.com/sindresorhus/modern-normalize/issues/3
+ * 3. Relative value unit refers to the size of the parent element.  
+      Browsers font size default is 16px. For a 1em/10px report,  
+      we divide the size by the default size: 10/16 x 100 = 62.5%.
+ * 4. Force scrollbars to always be visible to prevent awkward jumps when
+      navigating between pages that do/do not have enough content to produce
+      scrollbars naturally.
+      @see https://css-tricks.com/snippets/css/force-vertical-scrollbar/
+ * 5. Displays auto-hiding scrollbars during mouse interactions 
+      and panning indicators during touch and keyboard interactions. 
+      @for Edge 12+
+ * 6. Fonts on OSX will look more consistent with other systems that do not
+      render text using sub-pixel anti-aliasing.
+      @for OSX.
+ * 7. Remove the highlighting effect when "tapped" action on webkit.
+      @for Androids.
+ * 8. @for some Androids.
+      @see https://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+ * 9. Prevent iOS text size adjust after orientation change, without disabling
+      user zoom.
+      @for iOS Safari 5.1+.
+ * 10. Use a more readable tab size.
+ */
+
+html {
+  box-sizing: border-box; /* 1 */
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; /* 2 */
+  font-size: 62.5%; /* 3 */
+  overflow-y: scroll; /* 4 */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* 5 */
+  -moz-osx-font-smoothing: grayscale; /* 6 */
+  -webkit-font-smoothing: antialiased; /* 6 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* 7 */
+  -webkit-tap-highlight-color: transparent; /* 8 */
+  -webkit-text-size-adjust: 100%; /* 9 */
+  tab-size: 4; /* 10 */
+  -moz-tab-size: 4; /* 10 */
+}
+
+/* ----------------------------------------------------------------------------
+ ## Sections
+---------------------------------------------------------------------------- */
+
+/**
+ * Reset margins and paddings.
+ */
+
+body, section, nav, article, aside,
+h1, h2, h3, h4, h5, h6, header, footer, address {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Grouping content
+---------------------------------------------------------------------------- */
+
+/**
+ * Prevents certain content from spilling their container.
+ */
+
+blockquote,
+pre {
+  max-width: 100%;
+}
+
+/**
+ * Removes list style.
+ */
+
+ol, ul {
+  list-style: none;
+}
+
+/**
+ * Reset margins and paddings.
+ */
+
+p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, div {
+  margin: 0;
+  padding: 0;
+}
+ 
+/**
+ * Improve consistency of default fonts in all browsers. 
+   @see https://github.com/sindresorhus/modern-normalize/issues/3
+ */
+ 
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; 
+}
+
+/* ----------------------------------------------------------------------------
+ ## Text-level semantics
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Removes text-decoration and outline to links
+ * 2. Removes delay from tapping on clickable elements.
+      @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+ * 3. Removes gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  outline: 0; /* 1 */
+  text-decoration: none; /* 1 */
+  touch-action: manipulation; /* 2 */
+  -webkit-text-decoration-skip: objects; /* 3 */
+}
+
+/**
+ * Add the correct text decoration in Chrome, Edge and Safari.
+ */
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Display the text as it was written and line breaks so that 
+      the text does not leave the block.
+ * 2. Prevents certain content from spilling their container.
+ */
+
+code {
+  white-space: pre-wrap; /* 1 */
+  max-width: 100%; /* 2 */
+}
+
+/**
+ * Improve consistency of default fonts in all browsers. 
+   @see https://github.com/sindresorhus/modern-normalize/issues/3
+ */
+
+code,
+kbd,
+samp {
+   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; 
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+   all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Embedded content
+---------------------------------------------------------------------------- */
+
+/** 
+ * Removes delay from tapping on clickable elements.
+   @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+ */
+
+area {
+  touch-action: manipulation;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes,
+   images, videos and the bottom of their containers.
+   @see https:////github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Reset margins and paddings.
+ */
+
+iframe, embed, object, param, video {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Preserves the aspect ratio.
+ */
+
+img {
+  height: auto;
+}
+
+/**
+ * Disable highlight on image when select and drag it with the mouse.
+ * 1. @for Firefox 2+, Firefox for Android 33+.
+ * 2. @for Chrome 4+, Safari 3.1+, Opera 9.6+, Android 4.4+.
+   @see https://stackoverflow.com/questions/6816080/how-to-disable-highlight-on-a-image
+ */
+
+img::-moz-selection { /* 1 */
+  background-color: transparent;
+}
+
+img::selection { /* 2 */
+  background-color: transparent;
+}
+
+/**
+ * Prevents certain content from spilling their container.
+ */
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+/**
+ * Change the fill color to match the text color in all browsers.
+ */
+
+svg {
+  fill: currentColor;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Tabular data
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Remove text indentation from table contents in Chrome and Safari.
+      https://bugs.chromium.org/p/chromium/issues/detail?id=999088
+      https://bugs.webkit.org/show_bug.cgi?id=201297
+ * 2. Correct table border color inheritance in Chrome and Safari.
+      https://bugs.chromium.org/p/chromium/issues/detail?id=935729
+      https://bugs.webkit.org/show_bug.cgi?id=195016
+ */
+
+table {
+	text-indent: 0; /* 1 */
+	border-color: inherit; /* 2 */
+}
+
+/**
+ * Reset margins and paddings.
+ */
+
+table, caption, tr, td, th {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Prevents certain content from spilling their container.
+ */
+
+table,
+td {
+  max-width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Forms
+---------------------------------------------------------------------------- */
+
+/**
+ * Remove the tapping delay from clickable elements.
+   @see https://www.sitepoint.com/5-ways-prevent-300ms-click-delay-mobile-devices/
+ */
+ 
+button,
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+}
+ 
+/**
+ * Remove the inheritance of text transform in Edge and Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+ 
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+ 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Gives a pointer cursor to clickable forms elements.
+ */
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled),
+label[for],
+select {
+  cursor: pointer;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Reset margins and paddings.
+ */
+
+form, button, input, label, select, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Prevents certain content from spilling their container.
+ */
+
+input,
+textarea {
+  max-width: 100%;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+ 
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+   @for Firefox 5+, Chrome 4+, Safari 4+, opera 12.1+.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+ 
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+ 
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+ 
+/**
+ * Remove the additional ':invalid' styles in Firefox.
+   @see https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+ */
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+ 
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* ----------------------------------------------------------------------------
+ ## Interactive
+---------------------------------------------------------------------------- */
+
+/**
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
