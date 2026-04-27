@@ -233,7 +233,6 @@ else
 fi
 [[ "$pager_isset" == "false" ]] && echo -e $purple "[warn]: ${red}PAGER is not set." $reset || echo -e $blue "[info]: ${green}PAGER is set to: $PAGER" $reset
 
-#curl -sSL https://gist.githubusercontent.com/luisadha/eb630443fa87ae7d405b5961bc6955ff/raw/84e5c23dee25f05d7ef2bce26ba663c25e51b761/qunut.more |
 export BASH_ARGV0=""
 sed -n '/: BEGIN/,/: EOF/p' $0 | ${PAGER:-$MANPAGER}   
 # </span>
