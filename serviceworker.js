@@ -18,7 +18,7 @@
 //---------------
 
 // -- Cache name and version
-const cacheTitle = 'Qunut'
+const cacheTitle = 'yourAppName'
 const cacheVersion = 'v1.0'
 const cacheName = cacheTitle + '-' + cacheVersion
 
@@ -26,13 +26,25 @@ const cacheName = cacheTitle + '-' + cacheVersion
 const contentToCache = [
   // - Pages
   '/',
-  './index.html',
-  './iconx/android-chrome-192x192.png',
-  './iconx/android-chrome-512x512.png',
-  './iconx/android-chrome-maskable-192x192.png',
-  './iconx/android-chrome-maskable-512x512.png',
-  './assets/favicon.png',
-  './offline.html'
+  'index.html',
+  // - Favicons
+  'favicon.ico',
+  'favicon-16.png',
+  'favicon-32.png',
+  // - CSS
+  'assets/css/pwabunga.css',
+  'assets/css/styles.css',
+  // - JS
+  'assets/js/scripts.js',
+  // - PWA
+  'pwa/css/pwabunga-ui.css',
+  'pwa/icons/apple-touch-icon.png',
+  'pwa/icons/icon-192.png',
+  'pwa/icons/icon-512.png',
+  'pwa/icons/icon-maskable-192.png',
+  'pwa/icons/icon-maskable-512.png',
+  'pwa/js/pwabunga.js',
+  'pwa/app.webmanifest'
 ]
 
 // # Request Processing Strategy Config 
@@ -319,5 +331,3 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(method({request}))
   }
 })
-
-
