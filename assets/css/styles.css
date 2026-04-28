@@ -1,0 +1,77 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    background: rgba(245, 245, 245, 1);
+    margin: 0;
+    padding: 10px;
+}
+
+footer {
+    font-size: 0.65rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* PRE biar aman di HP */
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* CODE block */
+code {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 10px;
+    color: #F0F0F0 !important;
+    background: rgb(11 12 14) !important;
+}
+
+/* Container utama */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Hindari elemen jebol */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hidden text diperbaiki */
+.hidden-text {
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+/* Optional: khusus HP */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    code {
+        font-size: 0.9rem;
+    }
+}
