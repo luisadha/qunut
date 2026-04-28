@@ -1,7 +1,7 @@
 {
-  "short_name": "your Short App Name",
-  "name": "your App Name",
-  "description": "your App description",
+  "short_name": "Qunut",
+  "name": "Hafal Doa Qunut",
+  "description": "E-book",
   "id": "?homescreen=1",
   "start_url": "../?utm_source=homescreen",
   "scope": "../",
