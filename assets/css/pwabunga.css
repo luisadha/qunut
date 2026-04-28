@@ -550,3 +550,10 @@ textarea {
 summary {
   display: list-item;
 }
+.hidden-text { 
+  position: absolute;
+  opacity: 0;
+  max-width: 100%;
+  overflow: hidden;
+
+}
