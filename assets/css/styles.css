@@ -19,29 +19,41 @@ a {
     text-decoration: none;
 }
 
-/* PRE biar aman di HP */
+/* FIX UTAMA ADA DI SINI */
 pre {
+    background: rgb(11 12 14);
+    color: #F0F0F0;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-x: auto;
     max-width: 100%;
 }
 
-/* CODE block */
 code {
+    background: none !important;
+    color: inherit;
     display: block;
-    max-width: 100%;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    border-radius: 4px;
     font-size: 1rem;
-    padding: 10px;
-    color: #F0F0F0 !important;
-    background: rgb(11 12 14) !important;
 }
 
-/* Container utama */
+/* ribbon tetap */
+.github-fork-ribbon:before {
+    background-color: rgb(11 12 14);
+}
+
+/* FIX nowrap yang bikin jebol */
+.hidden-text {
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+/* FIX container biar gak geser */
 .container {
     display: flex;
     flex-direction: column;
@@ -51,21 +63,13 @@ code {
     overflow-x: hidden;
 }
 
-/* Hindari elemen jebol */
+/* biar gambar & iframe gak keluar layar */
 img, iframe {
     max-width: 100%;
     height: auto;
 }
 
-/* Hidden text diperbaiki */
-.hidden-text {
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    visibility: hidden;
-}
-
-/* Optional: khusus HP */
+/* optional biar enak di HP */
 @media (max-width: 600px) {
     body {
         font-size: 14px;
