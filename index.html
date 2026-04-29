@@ -205,7 +205,89 @@
 			</div>
 
 		</div>
+: qunut(1) Powered by Github Pages<a class="github-fork-ribbon" href="https://github.com/luisadha/alrc-termux" data-ribbon="Contribute on GitHub" title="Contribute on GitHub">Contribute on GitHub</a> <h2>
+#!/usr/bin/env bash </br></h2><span>luisadha.github.io/qunut Use this self-hosted script to Reading e-book qunut.</span><h3>
+### <a name="usage" href="#usage">Membaca melalui Terminal</a></h2><pre><code code="shell">curl -L luisadha.github.io/qunut | bash</code></pre><h3><span class="hidden-text">
+red="\e[0;91m"; green="\e[0;32m"; yellow="\e[0;33m"; reset="\e[0m"
+blue="\e[0;34m"; purple="\e[0;95m";
+if command -v less &> /dev/null; then
+    echo -e $blue "[info]: ${yellow}less is installed and likely used as the default pager." $reset
+elif command -v more &> /dev/null; then
+    echo -e $blue "[info]: ${yellow}more is installed and likely used as the default pager." $reset
+else
+    echo -e $red "No common pager (less/more) found." $reset
+fi
+if [[ -n "$PAGER" ]]; then   
+    pager_isset=true
+else
+    pager_isset=false
+fi
 
+if [[ -n "$MANPAGER" ]]; then
+    manpager_isset=true
+    echo -e $blue "[info]: ${green}MANPAGER is set to: $MANPAGER" $reset
+else
+    manpager_isset=false
+    echo -e $purple "[warn]: ${red}MANPAGER is not set." $reset
+fi
+[[ "$pager_isset" == "false" ]] && echo -e $purple "[warn]: ${red}PAGER is not set." $reset || echo -e $blue "[info]: ${green}PAGER is set to: $PAGER" $reset
+
+
+export BASH_ARGV0=""
+sed -n '/: BEGIN/,/: EOF/p' $0 | ${PAGER:-$MANPAGER}   
+# </span>
+### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">    
+: BEGIN
+# TITLE: MEMORIZE DOA QUNUT / UNTUK MENGHAFAL DOA QUNUT (qunut.sh)
+
+# VERSION: V0.2 (UPDATED Teu Feb 08 05:00:12 WIB 2025 )
+
+# SOURCE: https://github.com/luisadha/qunut
+
+# AUTHOR: &ltadharudin14@gmail.com&gt
+
+# LICENSE: CC BY-SA (Attribution-ShareAlike)
+
+# USAGE: ENTER to next, SPACE to page down, / to Search, q to Quit
+
+: Days 1st /Hari ke-1
+
+# Allaahummahdinii fii man hadaiit, wa 'aafinii fii man 'aafaiit,
+
+# Wa tawallanii fii man tawallaiit,
+
+# Wa baarik lii fiimaa a'thaiit.
+
+: Days 2nd /Hari ke-2
+
+# Wa qinii birahmatika syarra maa qadhaiit.
+
+: Days 3rd /Hari ke-3
+
+# Fa innaka taqdhii wa laa yuqdhaa 'alaiik.
+
+: Days 4th /Hari ke-4
+
+# Wa innahuu laa yadzillu man waalaiit.
+
+: Days 5th /Hari ke-5
+
+# Wa laa ya'izzu man 'aadaiit.
+
+: Days 6th /Hari ke-6
+
+# Tabaarakta rabbannaa wa ta'aalaiit.
+
+: Days 7th /Hari ke-7
+
+# Fa lakal-hamdu 'alaa maa qadhaiit astaghfiruka wa atuubu ilaiik.
+
+: Days 8th /Hari ke-8
+
+# Wa shallallaahu 'alaa sayyidinaa Muhammadin-nabiyyil-ummiyyi wa 'alaa aalihii wa shahbihii wa sallam.
+
+: EOF 
+#</code></pre><footer>#### Copyright (C) 2021-2025 <a href="https://luisadha.my.id">luisadha.my.id</a> (<a href="https://github.com/luisadha">github.com/luisadha</a>) ####</footer>
 		<!-- Javascript -->
 		<script src="assets/js/scripts.js"></script>
 		<script src="pwa/js/pwabunga.js"></script>
