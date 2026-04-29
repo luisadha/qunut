@@ -571,3 +571,6 @@
 .pwa-params-permission-geolocation.is-visible {
   display: flex;
 }
+hidden-text { 
+ visibility: hidden; /* atau display: none; */ 
+} 
