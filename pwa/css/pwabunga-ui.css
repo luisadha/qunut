@@ -603,3 +603,191 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
     border: 0;
 }
 
+#installCmd {
+  width: 100%;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, "Roboto Mono", monospace;
+  font-size: 13px;
+  color: #f0f0f0;
+  background: #0b0c0e;
+  border: none;
+  border-left: 4px solid #04AA6D; /* hijau khas W3Schools */
+  padding: 10px 12px; 
+ /* padding: 10px 75px 10px 12px; /* kanan lebih lebar */
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: default;
+}
+
+/* ✳️ Styling tombol copy */
+#myFixCopy {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  margin-top: 6px;
+  background: #04AA6D;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+/* 🌙 Mode Gelap */
+@media (prefers-color-scheme: dark) {
+  #installCmd {
+    background: #161b22;
+    color: #e6edf3;
+    border-left: 4px solid #2ea043;
+  }
+
+  #myFixCopy {
+    background: #2ea043;
+  }
+
+  #myFixCopy:hover {
+    background: #238636;
+  }
+}
+
+/* 📦 Tata letak mirip share-container tapi untuk table */
+.table-container {
+  display: flex;
+  flex-wrap: wrap;         /* elemen bisa turun ke baris baru */
+  gap: 10px;               /* jarak antar elemen */
+  align-items: flex-start; /* biar sejajar rapi di atas */
+  justify-content: flex-start; /* biar semua elemen mulai dari kiri */
+  overflow-x: auto;        /* jika kepanjangan, bisa digeser horizontal */
+  -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
+  margin-top: 1em;
+}
+
+/* Jika kamu pakai <table> langsung di dalamnya */
+.table-container table {
+  border-collapse: collapse;
+  min-width: 250px;
+}
+
+/* Sel dan isi tabel biar tetap bersih tapi rapi */
+.table-container td,
+.table-container th {
+  padding: 8px 12px; /* 0 */
+  text-align: left;
+  border: none;
+  font-family: monospace;
+  background: #fff;
+}
+
+.table-container table {
+  border-collapse: separate; /* penting biar border-radius berfungsi */
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* biar radius nggak bocor */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-container td {
+  border: none;
+  padding: 0.5em;
+}
+
+.table-container td:first-child {
+  border-right: 1px solid #ddd; /* garis pemisah antara input dan tombol */
+}
+
+
+
+/* 🌙 Mode Gelap */
+@media (prefers-color-scheme: dark) {
+  .table-container td,
+  .table-container th {
+    border-color: #30363d;
+    background: #161b22;
+    color: #e6edf3;
+  }
+}
+
+.share-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-container button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: background 0.2s;
+}
+
+.share-container button:hover {
+  background: #43a047;
+  transform: scale(1.05)
+}
+
+.share-container button img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1) brightness(1.2);
+  transition: filter 0.2s;
+}
+
+/* kalau latar tombolnya terang, balik ke ikon hitam */
+@media (prefers-color-scheme: light) {
+  .share-container button {
+    background: #f0f0f0;
+    color: #111;
+  }
+
+  .share-container button:hover {
+    background: #ddd;
+  }
+
+  .share-container button img {
+    filter: none;
+  }
+}
+
+.outline {
+  position: relative;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+}
+
+.outline button {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+}
+
+
+code {
+  display: block;
+  background: #0b0c0e;
+  color: #f0f0f0;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+button, input, textarea {
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.2em 0.5em;
+}
+
