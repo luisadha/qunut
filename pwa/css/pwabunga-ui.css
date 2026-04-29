@@ -587,6 +587,19 @@ pre {
 .pwa-params-permission-geolocation.is-visible {
   display: flex;
 }
-hidden-text { 
- visibility: hidden; /* atau display: none; */ 
-} 
+.hidden-text { 
+ /*
+Source - https://stackoverflow.com/a/27769435
+Posted by Josh Crozier, modified by community. See post 'Timeline' for change history
+Retrieved 2026-04-29, License - CC BY-SA 3.0
+*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
