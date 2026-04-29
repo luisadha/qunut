@@ -790,4 +790,7 @@ button, input, textarea {
   font-size: inherit;
   padding: 0.2em 0.5em;
 }
-
+img, .block {
+  display: block;
+  margin: 0.3em;
+}
