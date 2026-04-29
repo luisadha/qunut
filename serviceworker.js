@@ -18,7 +18,7 @@
 //---------------
 
 // -- Cache name and version
-const cacheTitle = 'yourAppName'
+const cacheTitle = 'qunut'
 const cacheVersion = 'v1.0'
 const cacheName = cacheTitle + '-' + cacheVersion
 
