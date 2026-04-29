@@ -19,11 +19,12 @@
 ---------------------------------------------------------------------------- */
 
 :root {
-  --pwa-color-primary: #D3C5E5;
+  --pwa-color-primary: #735DA5;
   --pwa-color-primary-opacity: rgba(93, 0, 216, 0.9);
-  --pwa-color-secondary: #735DA5;
+  --pwa-color-secondary: #D3C5E5;
   --pwa-color-secondary-opacity: rgba(223, 205, 247, 0.9);
   --pwa-color-light: #FFFFFF;
+  --code-text: #2b1d3a;
   --pwa-color-dark: #000;
   --pwa-color-gray: #ccc;
   --pwa-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -44,6 +45,18 @@ body {
   background: var(--pwa-color-secondary);
 }
 
+pre, code {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-family: monospace;
+}
+pre {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow-x: auto;
+
+}
 .pwa-btn {
   background: var(--pwa-color-light);
   border: none;
