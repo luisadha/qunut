@@ -19,11 +19,11 @@
 ---------------------------------------------------------------------------- */
 
 :root {
-  --pwa-color-primary: #5d00d8;
+  --pwa-color-primary: #D3C5E5;
   --pwa-color-primary-opacity: rgba(93, 0, 216, 0.9);
-  --pwa-color-secondary: #dfcdf7;
+  --pwa-color-secondary: #735DA5;
   --pwa-color-secondary-opacity: rgba(223, 205, 247, 0.9);
-  --pwa-color-light: #416d19;
+  --pwa-color-light: #FFFFFF;
   --pwa-color-dark: #000;
   --pwa-color-gray: #ccc;
   --pwa-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -40,6 +40,9 @@
 /* ----------------------------------------------------------------------------
  ## PWA UI Button
 ---------------------------------------------------------------------------- */
+body {
+  background: var(--pwa-color-secondary);
+}
 
 .pwa-btn {
   background: var(--pwa-color-light);
