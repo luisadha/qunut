@@ -206,8 +206,16 @@
 
 		</div>
 : qunut(1) Powered by Github Pages<a class="github-fork-ribbon" href="https://github.com/luisadha/alrc-termux" data-ribbon="Contribute on GitHub" title="Contribute on GitHub">Contribute on GitHub</a> <h2>
-#!/usr/bin/env bash </br></h2><span>luisadha.github.io/qunut Use this self-hosted script to Reading e-book qunut.</span><h3>
-### <a name="usage" href="#usage">Membaca melalui Terminal</a></h2><pre><code code="shell">curl -L luisadha.github.io/qunut | bash</code></pre><h3><span class="hidden-text">
+#!/usr/bin/env bash </br>
+<span>luisadha.github.io/qunut Use this self-hosted script to Reading e-book qunut.</span>
+	<h2>
+		#<a name="usage" href="#usage">Membaca melalui Terminal</a>
+	</h2>
+		<pre>
+			<code code="shell">curl -L luisadha.github.io/qunut | bash</code>
+		</pre>
+
+			<span class="hidden-text">
 red="\e[0;91m"; green="\e[0;32m"; yellow="\e[0;33m"; reset="\e[0m"
 blue="\e[0;34m"; purple="\e[0;95m";
 if command -v less &> /dev/null; then
@@ -236,7 +244,11 @@ fi
 export BASH_ARGV0=""
 sed -n '/: BEGIN/,/: EOF/p' $0 | ${PAGER:-$MANPAGER}   
 # </span>
-### <a name="code" href="#code">Membaca melalui Browser</a></h2><pre><code code="bash">    
+<h2>
+	<a name="code" href="#code">Membaca melalui Browser</a>
+</h2>
+<pre>
+<code code="bash">    
 : BEGIN
 # TITLE: MEMORIZE DOA QUNUT / UNTUK MENGHAFAL DOA QUNUT (qunut.sh)
 
