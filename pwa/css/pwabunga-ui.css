@@ -729,6 +729,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   cursor: pointer;
   font-family: sans-serif;
   transition: background 0.2s;
+  position: static;
 }
 
 .share-container button:hover {
@@ -765,7 +766,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   border: 1px solid #ccc;
 }
 
-.outline button {
+.outline > button {
   position: absolute;
   right: 2em;
   top: 2em;
