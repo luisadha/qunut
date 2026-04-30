@@ -1,7 +1,7 @@
 {
   "short_name": "Qunut",
   "name": "qunut",
-  "description": "script",
+  "description": "Sudah hafal do'a ini belum? Yuk baca sekarang!",
   "id": "?homescreen=1",
   "start_url": "../?utm_source=homescreen",
   "scope": "../",
