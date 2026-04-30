@@ -47,7 +47,7 @@ body {
 }
 
 pre, code {
-  background: var(--code-bg);
+  background: var(--pwa-color-secondary);
   color: var(--code-text);
   padding: 10px 14px;
   border-radius: 8px;
