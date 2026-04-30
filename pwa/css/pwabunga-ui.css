@@ -722,7 +722,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  background: #4caf50;
+  background: #A569BD;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -733,7 +733,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
 }
 
 .share-container button:hover {
-  background: #43a047;
+  background: #6C3483;
   transform: scale(1.05)
 }
 
