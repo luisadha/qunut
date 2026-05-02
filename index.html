@@ -226,9 +226,19 @@
         <input id="installCmd" type="text" value="curl -L luisadha.github.io/qunut | bash" readonly>
       </td> 
       <td>
-      <div class="share-container"><button id="copy" aria-label="Copy perintah instalasi" onclick="myFixCopy()">
-        <img src="./assets/img/copy_duplicate_icon.png" alt="CopyImage" width="11" height="11">Copy</button>
-      </div> 
+      <div class="share-container">
+	<!-- Input teks yang akan disalin -->
+<label for="input-perintah" class="visually-hidden">Perintah Instalasi</label>
+<input type="text" id="input-perintah" value="npm install react" readonly>
+
+<!-- Tombol salin dengan label yang cocok -->
+<button aria-label="Copy perintah instalasi" onclick="myFixCopy()">
+    <img src="./assets/img/copy_duplicate_icon.png" alt="" width="11" height="11">
+    Copy
+</button>
+
+
+	  </div> 
       </td> 
       </tr>
     </table> 
