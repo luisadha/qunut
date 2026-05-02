@@ -783,6 +783,7 @@ code {
   overflow-x: auto;
 }
 
+
 section {
   margin-bottom: 2rem;
 }
@@ -799,3 +800,7 @@ img, .block {
 p {
     margin-left: 20px;
  }
+.visually-hidden {
+ position: absolute;
+ color: #000000;
+}
