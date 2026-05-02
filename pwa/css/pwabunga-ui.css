@@ -712,13 +712,13 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   }
 }
 
-.share-container {
+.copy-container {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.share-container button {
+.copy-container button {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -733,12 +733,12 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   position: static;
 }
 
-.share-container button:hover {
+.copy-container button:hover {
   background: #6C3483;
   transform: scale(1.05)
 }
 
-.share-container button img {
+.copy-container button img {
   width: 18px;
   height: 18px;
   filter: invert(1) brightness(1.2);
@@ -747,16 +747,16 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
 
 /* kalau latar tombolnya terang, balik ke ikon hitam */
 @media (prefers-color-scheme: light) {
-  .share-container button {
+  .copy-container button {
     background: #f0f0f0;
     color: #111;
   }
 
-  .share-container button:hover {
+  .copy-container button:hover {
     background: #ddd;
   }
 
-  .share-container button img {
+  .copy-container button img {
     filter: none;
   }
 }
