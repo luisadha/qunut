@@ -2,7 +2,7 @@ async function includeHTML(id, file, appendToHead = false) {
   try {
     const base = `/${location.pathname.split('/')[1]}`;
     const el = document.getElementById(id);
-    const response = await fetch(`${base}/section/${file}`);
+    const response = await fetch(`${base}/partials/${file}`);
     if (!response.ok) throw new Error(`Gagal memuat ${file}: ${response.status}`);
 
     let html = await response.text();
