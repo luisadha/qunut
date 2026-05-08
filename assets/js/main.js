@@ -23,7 +23,7 @@ async function includeHTML(id, file, appendToHead = false) {
   }
 }
 
-includeHTML("brain", "brain.html", true);
-includeHTML("header", "header.html");
-includeHTML("postscript", "postscript.html");
+includeHTML("header", "header.html", true);
+includeHTML("navigation", "navigation.html");
+includeHTML("content", "content.html");
 includeHTML("footer", "footer.html");
