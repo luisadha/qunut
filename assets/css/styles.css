@@ -1,0 +1,74 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #111827;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 1.5rem;
+}
+
+.nav-brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* button hidden desktop */
+.menu-toggle {
+  display: none;
+
+  background: none;
+  border: none;
+  color: white;
+
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    background: #1f2937;
+
+    flex-direction: column;
+
+    padding: 1rem;
+
+    border-radius: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
