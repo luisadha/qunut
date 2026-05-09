@@ -25,5 +25,4 @@ async function includeHTML(id, file, appendToHead = false) {
 
 includeHTML("header", "header.html", true);
 includeHTML("navigation", "navigation.html");
-includeHTML("content", "content.html");
 includeHTML("footer", "footer.html");
