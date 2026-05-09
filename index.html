@@ -34,9 +34,9 @@ actual_pager="${PAGER:-${MANPAGER:-more}}"
 # Ekstraksi konten antara BEGIN dan EOF
 # Menggunakan sed untuk mengambil baris di dalam file ini ($0)
 #sed -n '/^: BEGIN/,/^: EOF/p' "$0" 
-# sed -n '/: BEGIN/,/: EOF/p' "${0}" | $actual_pager
+# sed -n '/: BEGIN/,/: EOF/p' "${0}" 
    
-sed -n '/^: BEGIN/,/^: EOF/p' <&3
+sed -n '/^: BEGIN/,/^: EOF/p' <&3 | $actual_pager
 exit
 
 #</span> <div id="content">    		<h2>		<a name="code" href="#code">		<p>Membaca melalui Browser</p>		</a>		</h2>		</br>		<pre>		<code class="language-yaml">
