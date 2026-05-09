@@ -3,7 +3,6 @@
 # Definisi Warna (Menggunakan printf agar kompatibel dengan sh)
 red="\033[0;91m"; green="\033[0;32m"; yellow="\033[0;33m"
 blue="\033[0;34m"; purple="\033[0;95m"; reset="\033[0m"
-
 # Cek ketersediaan binary pager
 if command -v less > /dev/null 2>&1; then
     printf "${blue}[info]: ${yellow}less is installed and likely used as the default pager.${reset}\n"
