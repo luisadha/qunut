@@ -49,8 +49,8 @@
     display: none;
 
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: auto;
+    right: auto;
 
     background: #735DA5;
 
