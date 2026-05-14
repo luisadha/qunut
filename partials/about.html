@@ -1,50 +1,141 @@
-
 <title>About</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: #0f172a;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Arial, sans-serif;
+      overflow:hidden;
+      position:relative;
+
+      /* Background gradient modern */
+      background:
+        radial-gradient(circle at top left, rgba(139,92,246,.35), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(59,130,246,.35), transparent 30%),
+        linear-gradient(135deg,#0f172a,#111827,#1e293b);
     }
 
-    .about-wrapper {
-      text-align: center;
+    /* Blur bubble effect */
+    body::before,
+    body::after{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      filter:blur(80px);
+      z-index:0;
     }
 
-    .about-wrapper h1 {
-      margin-bottom: 20px;
-      font-size: 32px;
+    body::before{
+      background:#8b5cf6;
+      top:-80px;
+      left:-80px;
+      opacity:.5;
     }
 
-    .about-wrapper iframe {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    body::after{
+      background:#3b82f6;
+      bottom:-100px;
+      right:-80px;
+      opacity:.4;
+    }
+
+    .about-wrapper{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:20px;
+      width:100%;
+    }
+
+    .about-wrapper h1{
+      font-size:40px;
+      margin-bottom:25px;
+      color:white;
+      letter-spacing:2px;
+      text-shadow:0 4px 15px rgba(0,0,0,.4);
+    }
+
+    .card-container{
+      position:relative;
+      display:inline-block;
+      padding:12px;
+      border-radius:24px;
+
+      /* Glow border */
+      background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #3b82f6,
+        #06b6d4,
+        #8b5cf6
+      );
+
+      background-size:300% 300%;
+      animation:gradientMove 8s ease infinite;
+
+      box-shadow:
+        0 0 30px rgba(139,92,246,.45),
+        0 0 60px rgba(59,130,246,.25);
+    }
+
+    .card-container iframe{
+      display:block;
+      border:none;
+      width:415px;
+      height:228px;
+      border-radius:18px;
+      background:white;
+    }
+
+    @keyframes gradientMove{
+      0%{
+        background-position:0% 50%;
+      }
+      50%{
+        background-position:100% 50%;
+      }
+      100%{
+        background-position:0% 50%;
+      }
+    }
+
+    /* Responsive */
+    @media(max-width:500px){
+      .about-wrapper h1{
+        font-size:30px;
+      }
+
+      .card-container iframe{
+        width:100%;
+        max-width:415px;
+        height:228px;
+      }
+
+      .card-container{
+        width:100%;
+      }
     }
   </style>
-</head>
-<body>
+
   <div class="about-wrapper">
     <h1>About Me</h1>
 
-    <iframe 
-      src="https://gravatar.com/luisadha.card"
-      width="415"
-      height="228"
-      style="border:0; margin:0; padding:0;">
-    </iframe>
+    <div class="card-container">
+      <iframe 
+        src="https://gravatar.com/luisadha.card"
+        loading="lazy">
+      </iframe>
+    </div>
 
   </div>
-</body>
-</html>
+
