@@ -38,7 +38,7 @@ actual_pager="${PAGER:-${MANPAGER:-more}}"
 
 echo "[INFO] Invoking legacy execution in 5 seconds..."
 
-if timeout 5s bash -c "sed -n '/^# BEGIN/,/^# EOF/p' <&3 | \"$actual_pager\""; then
+if timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' <&3 | \"$actual_pager\"; then
     echo "[INFO] Legacy execution completed successfully."
 else
     echo "[WARN] Legacy execution failed. Falling back..."
