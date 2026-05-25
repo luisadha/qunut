@@ -43,7 +43,7 @@ actual_pager="${PAGER:-${MANPAGER:-}}"
 # sed -n '/^# BEGIN/,/^# EOF/p' "$src"
 echo "[INFO] Invoking legacy execution in 5 seconds..."
 
-if timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' "$self" | "$actual_pager"; then
+if timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' "$self" | "$actual_pager" 2> /dev/null; then
     echo "[INFO] Legacy execution completed successfully."
 else
     echo "[WARN] Legacy execution failed. Falling back..."
