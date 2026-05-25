@@ -35,8 +35,10 @@ actual_pager="${PAGER:-${MANPAGER:-more}}"
 # Menggunakan sed untuk mengambil baris di dalam file ini ($0)
 #sed -n '/^: BEGIN/,/^: EOF/p' "$0" 
 # sed -n '/: BEGIN/,/: EOF/p' "${0}" 
-   
+
+echo "[INFO] Invoking legacy execution.. in 5 seconds."
 timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' <&3 | $actual_pager
+echo "failled!"    
 curl -s https://qunut-api.vercel.app/api/qunut \
 | jq -r '"Hari ke-\(.hari_ke)\t\(.doa)"' \
 | fzf \
