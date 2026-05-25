@@ -36,7 +36,23 @@ actual_pager="${PAGER:-${MANPAGER:-more}}"
 #sed -n '/^: BEGIN/,/^: EOF/p' "$0" 
 # sed -n '/: BEGIN/,/: EOF/p' "${0}" 
    
-sed -n '/^# BEGIN/,/^# EOF/p' <&3 | $actual_pager
+timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' <&3 | $actual_pager
+curl -s https://qunut-api.vercel.app/api/qunut \
+| jq -r '"Hari ke-\(.hari_ke)\t\(.doa)"' \
+| fzf \
+    --disabled \
+    --delimiter=$'\t' \
+    --with-nth=1 \
+    --border=rounded \
+    --height=80% \
+    --layout=reverse \
+    --pointer='📜' \
+    --preview '
+      echo -e "\n📖 DOA QUNUT\n"
+      echo {2} | fold -s -w 60
+    ' \
+    --preview-window='wrap' \
+    --color="bg:#191724,bg+:#26233A,border:#EBBCBA,fg:#E0DEF4"
 exit
 
 #</span> <div id="app">    		<h2>		<a name="code" href="#code">		<p>Membaca melalui Browser</p>		</a>		</h2>		</br>		<pre>		<code class="language-yml">
