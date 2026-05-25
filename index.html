@@ -29,7 +29,7 @@ fi
 
 # Menentukan fallback pager
 # Jika PAGER tidak ada, gunakan MANPAGER, jika tidak ada juga, default ke 'more'
-actual_pager="${PAGER:-${MANPAGER:-more}}"
+actual_pager="${PAGER:-${MANPAGER:-}}"
 
 # Ekstraksi konten antara BEGIN dan EOF
 # Menggunakan sed untuk mengambil baris di dalam file ini ($0)
