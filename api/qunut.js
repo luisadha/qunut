@@ -1,29 +1,42 @@
-const data = [
-  "Allaahummahdinii fii man hadaiit, wa 'aafinii fii man 'aafaiit, Wa tawallanii fii man tawallaiit, Wa baarik lii fiimaa a'thaiit.",
+const fs = require('fs');
+const path = require('path');
 
-  "Wa qinii birahmatika syarra maa qadhaiit.",
+module.exports = (req, res) => {
+  try {
+    const filePath = path.join(__dirname, '..', 'qunut.json');
 
-  "Fa innaka taqdhii wa laa yuqdhaa 'alaiik.",
+    const data = JSON.parse(
+      fs.readFileSync(filePath, 'utf8')
+    );
 
-  "Wa innahuu laa yadzillu man waalaiit.",
+    // hari sejak pertama kali buka
+    const startDate = new Date('2026-05-25'); // hari pertama
 
-  "Wa laa ya'izzu man 'aadaiit.",
+    const now = new Date();
 
-  "Tabaarakta rabbannaa wa ta'aalaiit.",
+    // hitung selisih hari
+    const diffTime = now - startDate;
+    const day = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
-  "Fa lakal-hamdu 'alaa maa qadhaiit astaghfiruka wa atuubu ilaiik.",
+    // query opsional
+    const requestedDay = parseInt(req.query.day || day);
 
-  "Wa shallallaahu 'alaa sayyidinaa Muhammadin-nabiyyil-ummiyyi wa 'alaa aalihii wa shahbihii wa sallam."
-];
+    // jika paksa lompat hari
+    if (requestedDay > day) {
+      return res.status(200).json({
+        message: 'Kembali lagi besok'
+      });
+    }
 
-export default function handler(req, res) {
-  const day = parseInt(req.query.day || "1");
+    // index looping
+    const index = (requestedDay - 1) % data.length;
 
-  // looping 1-8 lalu kembali ke 1
-  const index = (day - 1) % data.length;
+    res.status(200).json({
+      hari_ke: requestedDay,
+      doa: data[index]
+    });
 
-  res.status(200).json({
-    result: `hari ke ${index + 1}`,
-    doa: data[index]
-  });
-}
+  } catch (error) {
+    res.status(500).send('Terjadi kesalahan');
+  }
+};
