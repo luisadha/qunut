@@ -2,5 +2,6 @@
 
 
 # Credits 
-- Luisadha
-- PwaBunga (Css Component & PWA Template)
+- Luisadha 
+- Frontend PwaBunga (Css Component & PWA Template) (Github Pages)
+- Backend API NodeJs & Vercel (Production)
