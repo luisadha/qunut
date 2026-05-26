@@ -41,12 +41,12 @@ actual_pager="${PAGER:-${MANPAGER:-}}"
 # Ekstraksi konten antara BEGIN dan EOF
 # Menggunakan sed untuk mengambil baris di dalam file ini ($0)
 
-echo "[INFO] Invoking legacy execution in 5 seconds..."
+    printf ${blue} "[info]: ${reset}Invoking legacy execution in 5 seconds..."
 
 if timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' "$self" | "$actual_pager" 2> /dev/null; then
-    echo ${blue} "[info]: ${reset}Legacy execution completed successfully."
+    printf ${blue} "[info]: ${reset}Legacy execution completed successfully."
 else
-    echo ${purple} "[warn]: ${reset}Legacy execution failed. Falling back..."
+    printf ${purple} "[warn]: ${reset}Legacy execution failed. Falling back..."
 
 COOKIE_FILE="$HOME/.qunut_cookie"
     curl -s \
