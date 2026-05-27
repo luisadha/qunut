@@ -1,8 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head><title>Qunut API</title></head>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qunut API</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      margin:0;
+      padding:0;
+      text-align:center;
+    }
+
+    .container{
+      padding:80px 20px;
+    }
+
+    h1{
+      font-size:48px;
+      margin-bottom:10px;
+    }
+
+    p{
+      color:#cbd5e1;
+      max-width:600px;
+      margin:auto;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 24px;
+      background:#38bdf8;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+    }
+
+    .code{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+      margin:40px auto;
+      max-width:600px;
+      text-align:left;
+      overflow:auto;
+    }
+
+    code{
+      color:#38bdf8;
+    }
+  </style>
+</head>
 <body>
-  <h1>Selamat datang di Qunut API</h1>
-  <p>Gunakan <code>/api/qunut</code> untuk mendapatkan hafalan ayat perhari.</p>
+
+  <div class="container">
+    <h1>Qunut API</h1>
+
+    <p>
+      API sederhana untuk mendapatkan hafalan doa qunut
+      dan ayat harian dalam format JSON.
+    </p>
+
+    <a href="/api/qunut" class="btn">
+      Coba API
+    </a>
+
+    <div class="code">
+<pre>
+GET /api/qunut
+
+{
+  "doa": "Allahumma ihdina fiman hadait..."
+}
+</pre>
+    </div>
+  </div>
+
 </body>
 </html>
